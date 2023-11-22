@@ -2,12 +2,14 @@
    Import earthquake data into the MySQL database using the provided Python code:
 	* Open a Python environment and execute the following code:
 
-
+		!pip install pandas
+		!pip install pymysql
+		!pip install sqlalchemy
 		import pandas as pd
 		from sqlalchemy import create_engine
 
 		data = pd.read_csv('path/to/your/database.csv')
-		engine = create_engine("mysql+pymysql://username:password@localhost:3306/taskdb")
+		engine = create_engine("mysql+pymysql://rohan:password@localhost:3306/taskdb")
 		data.to_sql('neic_earthquakes', con=engine, if_exists='replace', index=False)
 
 # Adjust the database connection details (username, password, and host) in the create_engine function.
